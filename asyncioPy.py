@@ -21,3 +21,16 @@ async def main():
 
 #asyncio.run(main())
 
+async def eternity():
+    # Sleep for one hour
+    await asyncio.sleep(2)
+    print('yay!')
+
+async def main():
+    # Wait for at most 1 second
+    try:
+        await asyncio.wait_for(eternity(), timeout=3)
+    except TimeoutError:
+        print('timeout!')
+
+asyncio.run(main())
