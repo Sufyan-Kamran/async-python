@@ -2,6 +2,7 @@ import asyncio
 import requests 
 from datetime import datetime
 from bs4 import BeautifulSoup
+
 response = requests.get('https://www.yellowpages.ca/search/si/1/plumber/Toronto+ON')
 soup = BeautifulSoup(response.content, 'html.parser')
 
